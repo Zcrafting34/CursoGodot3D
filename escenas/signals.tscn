@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://drdrh8bbp5hen"]
+
+[ext_resource type="Script" uid="uid://hxtuj4rj8hqb" path="res://scripts/objeto_1.gd" id="1_24xix"]
+[ext_resource type="Script" uid="uid://y5psj8doxdwh" path="res://scripts/objeto_2.gd" id="2_anv4d"]
+
+[node name="Signals" type="Node3D"]
+
+[node name="objeto1" type="Node" parent="."]
+script = ExtResource("1_24xix")
+
+[node name="objeto2" type="Node" parent="."]
+script = ExtResource("2_anv4d")
+
+[connection signal="Saludar" from="objeto1" to="objeto2" method="_on_objeto_1_saludar"]

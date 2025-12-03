@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d0k6um0hl5wm2"
+path="res://.godot/imported/platform-ramp.obj-5f89fe3d9df8e9ee7b6e7736d805e481.mesh"
+
+[deps]
+
+files=["res://.godot/imported/platform-ramp.obj-5f89fe3d9df8e9ee7b6e7736d805e481.mesh"]
+
+source_file="res://assets/Models/OBJ format/platform-ramp.obj"
+dest_files=["res://.godot/imported/platform-ramp.obj-5f89fe3d9df8e9ee7b6e7736d805e481.mesh", "res://.godot/imported/platform-ramp.obj-5f89fe3d9df8e9ee7b6e7736d805e481.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

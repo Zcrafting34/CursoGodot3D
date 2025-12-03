@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxkgavtcia51u"]
+
+[ext_resource type="Script" uid="uid://48vc4bnnougv" path="res://scripts/Funciones.gd" id="1_5ffay"]
+
+[node name="Funciones" type="Node3D"]
+script = ExtResource("1_5ffay")

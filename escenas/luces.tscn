@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6d2q46njvwvp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_seawr"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_1w0ab"]
+sky_material = SubResource("ProceduralSkyMaterial_seawr")
+
+[sub_resource type="Environment" id="Environment_sawmh"]
+background_mode = 2
+sky = SubResource("Sky_1w0ab")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Luces" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0, 0, 0, 1)
+light_energy = 0.0
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sawmh")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013251305, 0.062259436, -4.0478034)
+size = Vector3(14.658325, 1, 21.680115)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8096962, 2.4757495, -1.0200043)
+size = Vector3(0.37939453, 4.463684, 18.840912)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.13365757, 0, -0.9910276, 0, 1, 0, 0.9910276, 0, -0.13365757, -0.74408007, 2.4757495, 3.5151424)
+size = Vector3(0.37939453, 4.463684, 18.840912)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.999412, 0, -0.034288988, 0, 1, 0, 0.034288988, 0, -0.999412, -6.599771, 2.4757495, -4.1880627)
+size = Vector3(0.37939453, 4.463684, 18.840912)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.032858685, 0, 0.99946, 0, 1, 0, -0.99946, 0, 0.032858685, -3.8784885, 2.4757495, -9.990486)
+size = Vector3(0.37939453, 4.463684, 18.840912)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4348235, 2.993594, -3.1243556)
+light_color = Color(0.20784314, 0.48235294, 1, 1)
+light_energy = 4.024
+light_specular = 1.476
+shadow_enabled = true
+shadow_bias = 0.0
+omni_range = 8.022444
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5320148, -3.1185174)
+size = Vector3(1, 3.0488281, 1)

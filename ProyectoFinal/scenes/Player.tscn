@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://0rqf13y6t2gq"]
+
+[ext_resource type="Script" uid="uid://cwcitfdd0sb0k" path="res://ProyectoFinal/scripts/Player.gd" id="1_n01ch"]
+[ext_resource type="Script" uid="uid://1d2xtmxssury" path="res://ProyectoFinal/scripts/Camera.gd" id="2_aapxo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_aapxo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5yds"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4smv6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hielm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aapxo"]
+font_size = 56
+
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_n01ch")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_aapxo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(-0.0010278281, 0, 0.9999966, 0, 0.34000006, 0, -0.38999864, 0, -0.002635464, -0.03385198, 0.27081007, -0.45185733)
+material_override = SubResource("StandardMaterial3D_r5yds")
+mesh = SubResource("BoxMesh_4smv6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_hielm")
+
+[node name="pivot" type="Node3D" parent="." groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 0.97809684, 0.20815068, 0, -0.20815071, 0.9780967, 0.19547582, 2.8379724, 2.6925251)
+script = ExtResource("2_aapxo")
+
+[node name="Camera3D" type="Camera3D" parent="pivot"]
+transform = Transform3D(1, 0, 0, 0, 0.99514025, 0.09846881, 0, -0.09846881, 0.9951403, 0, 0, 0)
+
+[node name="pivot2" type="Node3D" parent="." groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 0.97809684, 0.20815068, 0, -0.20815071, 0.9780967, 0.19547582, 2.8379724, 2.6925251)
+script = ExtResource("2_aapxo")
+
+[node name="Camera3D" type="Camera3D" parent="pivot2"]
+transform = Transform3D(1, 0, 0, 0, 0.99514025, 0.09846881, 0, -0.09846881, 0.9951403, 0, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Coins"
+label_settings = SubResource("LabelSettings_aapxo")

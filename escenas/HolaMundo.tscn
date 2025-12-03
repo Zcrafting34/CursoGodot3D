@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0apvsno6y4vk"]
+
+[ext_resource type="Script" uid="uid://ri2d27k088gh" path="res://scripts/MiPrimerScript.gd" id="1_ibic7"]
+[ext_resource type="Script" uid="uid://bwujh7i6jgbin" path="res://scripts/Capsula.gd" id="2_xpq72"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ibic7"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_xpq72"]
+sky_material = SubResource("ProceduralSkyMaterial_ibic7")
+
+[sub_resource type="Environment" id="Environment_l8v32"]
+background_mode = 2
+sky = SubResource("Sky_xpq72")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ibic7"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_ibic7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l8v32")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_ibic7")
+script = ExtResource("2_xpq72")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0006, 3.55398)
